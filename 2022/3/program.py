@@ -9,15 +9,11 @@ for inp in inputs:
 	x1, x2 = inp[:l//2], inp[l//2:]
 	x1 = set(x1)
 	x2 = set(x2)
-	common = []
-	for x in x1:
-		if x in x2:
-			common.append(x)
-	for x in common:
-		if x.islower():
-			score += ord(x)-97+1
-		else:
-			score += ord(x)-65+27
+	x = list(x1.intersection(x2))[0]
+	if x.islower():
+		score += ord(x)-97+1
+	else:
+		score += ord(x)-65+27
 
 print(score)
 
